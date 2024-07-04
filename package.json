@@ -173,7 +173,8 @@
 		"format:check": "prettier --check .",
 		"semantic-release": "semantic-release",
 		"e2e": "wdio run e2e/wdio.local.conf.ts",
-		"e2e:bstack": "wdio run e2e/wdio.bstack.conf.ts"
+		"e2e:bstack": "wdio run e2e/wdio.bstack.conf.ts",
+		"build:peerjs": "node esbuild.mjs"
 	},
 	"devDependencies": {
 		"@parcel/config-default": "^2.9.3",
@@ -201,7 +202,17 @@
 		"semantic-release": "^23.0.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.0",
-		"wdio-geckodriver-service": "^5.0.1"
+		"wdio-geckodriver-service": "^5.0.1",
+		"dotenv": "^16.4.5",
+		"fs-extra": "^11.2.0",
+		"redrun": "^11.0.5",
+		"esbuild": "^0.21.5",
+		"esbuild-css-modules-plugin": "^3.1.2",
+		"esbuild-plugin-copy": "^2.1.1",
+		"esbuild-plugin-path-alias": "^1.0.7",
+		"esbuild-plugin-polyfill-node": "^0.3.0",
+		"esbuild-plugin-glsl": "^1.2.2",
+		"eslint-linter-browserify": "^9.6.0"
 	},
 	"dependencies": {
 		"@msgpack/msgpack": "^2.8.0",
