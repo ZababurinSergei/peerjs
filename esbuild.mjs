@@ -26,8 +26,8 @@ if (!fs.existsSync(path.resolve(__dirname, 'build'))) {
 }
 
 const entryPoints = [path.resolve(__dirname, './dist/bundler.mjs')]
-const outdir = path.resolve(__dirname, './build')
-const outfile = path.resolve(__dirname, './build/index.mjs')
+const outdir = path.resolve(__dirname, '../build')
+const outfile = path.resolve(__dirname, '../build/peerjs/index.mjs')
 
 console.time("⚡ [esbuild] Done");
 
@@ -68,76 +68,6 @@ try {
                      */
                     pattern: `[name]_[local]__[hash]`
                 }
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/assets/**/*'],
-                    to: ['./dist/assets']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/js/**/*'],
-                    to: ['./dist/js']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/fonts/**/*'],
-                    to: ['./dist/fonts']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/index.html'],
-                    to: ['./dist']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/index.git.html'],
-                    to: ['./dist']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/config/**/*'],
-                    to: ['./dist/config']
-                },
-                watch: false,
-            }),
-            copy({
-                // this is equal to process.cwd(), which means we use cwd path as base path to resolve `to` path
-                // if not specified, this plugin uses ESBuild.build outdir/outfile options as base path.
-                resolveFrom: 'cwd',
-                assets: {
-                    from: ['./src/sounds/**/*'],
-                    to: ['./dist/sounds']
-                },
-                watch: false,
             })
         ]
     }

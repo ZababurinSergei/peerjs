@@ -27,7 +27,11 @@ export class Socket extends EventEmitter {
 
 		const wsProtocol = secure ? "wss://" : "ws://";
 
-		this._baseUrl = wsProtocol + host + ":" + port + path + "peerjs?key=" + key;
+		if(!port) {
+			this._baseUrl = wsProtocol + host  + path + "peerjs?key=" + key;
+		} else {
+			this._baseUrl = wsProtocol + host + ":" + port + path + "peerjs?key=" + key;
+		}
 	}
 
 	start(id: string, token: string): void {
